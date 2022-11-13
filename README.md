@@ -3,6 +3,10 @@ This is a project I embarked on to help me revise C programming and also to shar
 
 It started out as a series of blog posts but I look forward to making a video series on it as well.
 
+Link to blog posts:
+1. [Part 1](https://blog.ehoneahobed.com/building-a-simple-shell-in-c-part-1)
+2. [Part 2](https://blog.ehoneahobed.com/building-a-simple-shell-in-c-part-2)
+
 ## How you can contribute
 I am open to suggestions and corrections to make it better. You can open an issue or make a pull request to contribute to the project.
 
