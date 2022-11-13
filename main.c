@@ -8,7 +8,7 @@ int main(int ac, char **argv){
     const char *delim = " \n";
     int num_tokens = 0;
     char *token;
-    int i, counter;
+    int i;
 
     /* declaring void variables */
     (void)ac;
@@ -56,16 +56,15 @@ int main(int ac, char **argv){
         }
         argv[i] = NULL;
 
-        /* print the content of argv */
-        for (counter = 0; counter<num_tokens-1; counter++){
-            printf("%s\n", argv[counter]);
-        } 
-
-        /* free up allocated memory */ 
-        free(lineptr);
+        /* execute the command */
+        execmd(argv);
 
     } 
 
 
+    /* free up allocated memory */ 
+    free(lineptr_copy);
+    free(lineptr);
+    
     return (0);
 }
