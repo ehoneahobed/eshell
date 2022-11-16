@@ -1,6 +1,7 @@
 #include "main.h"
 
-int main(int ac, char **argv){
+int main(int ac, char **argv)
+{
     char *prompt = "(Eshell) $ ";
     char *lineptr = NULL, *lineptr_copy = NULL;
     size_t n = 0;
@@ -14,18 +15,21 @@ int main(int ac, char **argv){
     (void)ac;
 
     /* Create a loop for the shell's prompt */
-    while (1) {
+    while (1)
+    {
         printf("%s", prompt);
         nchars_read = getline(&lineptr, &n, stdin);
-        /* check if the getline function failed or reached EOF or user use CTRL + D */ 
-        if (nchars_read == -1){
+        /* check if the getline function failed or reached EOF or user use CTRL + D */
+        if (nchars_read == -1)
+        {
             printf("Exiting shell....\n");
             return (-1);
         }
 
         /* allocate space for a copy of the lineptr */
         lineptr_copy = malloc(sizeof(char) * nchars_read);
-        if (lineptr_copy== NULL){
+        if (lineptr_copy == NULL)
+        {
             perror("tsh: memory allocation error");
             return (-1);
         }
@@ -36,7 +40,8 @@ int main(int ac, char **argv){
         /* calculate the total number of tokens */
         token = strtok(lineptr, delim);
 
-        while (token != NULL){
+        while (token != NULL)
+        {
             num_tokens++;
             token = strtok(NULL, delim);
         }
@@ -48,7 +53,8 @@ int main(int ac, char **argv){
         /* Store each token in the argv array */
         token = strtok(lineptr_copy, delim);
 
-        for (i = 0; token != NULL; i++){
+        for (i = 0; token != NULL; i++)
+        {
             argv[i] = malloc(sizeof(char) * strlen(token));
             strcpy(argv[i], token);
 
@@ -58,13 +64,11 @@ int main(int ac, char **argv){
 
         /* execute the command */
         execmd(argv);
+    }
 
-    } 
-
-
-    /* free up allocated memory */ 
+    /* free up allocated memory */
     free(lineptr_copy);
     free(lineptr);
-    
+
     return (0);
 }
