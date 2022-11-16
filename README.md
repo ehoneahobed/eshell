@@ -7,6 +7,7 @@ Link to blog posts:
 1. [Part 1](https://blog.ehoneahobed.com/building-a-simple-shell-in-c-part-1)
 2. [Part 2](https://blog.ehoneahobed.com/building-a-simple-shell-in-c-part-2)
 3. [Part 3](https://blog.ehoneahobed.com/building-a-simple-shell-in-c-part-3)
+4. [Part 4](https://blog.ehoneahobed.com/building-a-simple-shell-in-c-part-4)
 
 ## How you can contribute
 I am open to suggestions and corrections to make it better. You can open an issue or make a pull request to contribute to the project.
